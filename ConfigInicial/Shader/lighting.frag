@@ -28,6 +28,7 @@ uniform Light light;
 uniform Light light2; // Declaramos la segunda fuente de luz
 
 uniform sampler2D texture_diffuse;
+uniform sampler2D texture_diffuse1;
 
 void main()
 {
@@ -66,5 +67,5 @@ void main()
     vec3 result = (ambient1 + diffuse1 + specular1) + (ambient2 + diffuse2 + specular2);
     
     // Multiplicamos el resultado de las luces por la textura del modelo
-    color = vec4(result, 1.0f) * texture(texture_diffuse, TexCoords);
+   color = vec4(result, 1.0f) * texture(texture_diffuse1, TexCoords);
 }
